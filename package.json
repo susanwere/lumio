@@ -1,0 +1,39 @@
+{
+  "name": "lumio",
+  "version": "0.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=22.22.3 <23",
+    "npm": ">=11 <13"
+  },
+  "scripts": {
+    "dev:mobile": "npm run start --workspace @lumio/mobile --",
+    "dev:api": "npm run dev --workspace @lumio/api",
+    "lint": "eslint . --max-warnings 0",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "npm run typecheck --workspaces",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "build": "npm run build --workspace @lumio/shared && npm run build --workspace @lumio/api && npm run build --workspace @lumio/mobile",
+    "check": "npm run format:check && npm run lint && npm run typecheck && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^22.0.0",
+    "eslint": "^10.14.0",
+    "eslint-config-prettier": "^10.1.0",
+    "eslint-plugin-react-hooks": "^7.0.0",
+    "globals": "^17.0.0",
+    "prettier": "^3.8.0",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.0.0",
+    "vitest": "^5.1.0"
+  }
+}
