@@ -1,0 +1,13 @@
+{
+  "expo": {
+    "name": "Lumio",
+    "slug": "lumio",
+    "version": "0.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {}
+  }
+}
